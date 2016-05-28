@@ -35,7 +35,7 @@
 				if($user == $dbusername && $pass == $dbpassword) {
 					session_start();
 					$_SESSION['sess_user']=$user;
-					header("Location: member.php");
+					header("Location: index.php");
 				}
 			} else {
 				echo "Invalid username or bad password!";

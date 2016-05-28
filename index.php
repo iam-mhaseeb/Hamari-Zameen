@@ -2,18 +2,13 @@
 session_start();
 if (!isset($_SESSION['user']))
 	{
-		header("location: index.php");
+		header("location: login.php");
 	}
 ?>
 <!DOCTYPE HTML>
-<!--
-	Linear by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
-		<title>AutoHire</title>
+		<title>Hamari Zameen</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -22,11 +17,9 @@ if (!isset($_SESSION['user']))
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-		</noscript>
+		<link rel="stylesheet" href="css/skel-noscript.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-desktop.css" />
 	</head>
 	<body class="homepage">
 
@@ -49,7 +42,7 @@ if (!isset($_SESSION['user']))
 				
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">AutoHire</a></h1>
+					<h1><a href="#">Hamari Zameen</a></h1>
 				</div>
 			</div>
 		</div>
@@ -58,7 +51,7 @@ if (!isset($_SESSION['user']))
 		<div id="featured">
 			<div class="container">
 				<header>
-					<h2>Welcome to AutoHire</h2>
+					<h2>Welcome to Hamari Zameen</h2>
 				</header>
 				<center>
 				<image src = "images\dash3.png" height = "400" width = "1000">
