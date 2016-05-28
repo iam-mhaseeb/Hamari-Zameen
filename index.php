@@ -30,10 +30,10 @@ if (!isset($_SESSION['user']))
 				<nav id="nav">
 					<ul>
 						<li class="active"><a href="home.php">Home</a></li>
-						<li><a href="car.php">Our Cars</a></li>
-						<li><a href="rent.php">Rent Cars</a></li>
-						<li><a href="taxi.php">Taxi Service</a></li>
-						<li><a href="about.php">About</a></li>
+						<li><a href="car.php">Browse</a></li>
+						<li><a href="rent.php">Rent</a></li>
+						<li><a href="taxi.php">Add Property</a></li>
+						<li><a href="about.php">Search</a></li>
 						<li><a href = "logout.php"><?php echo $_SESSION['user']. " : " ?>Logout</a></li>
 					</ul>
 				</nav>
