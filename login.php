@@ -18,8 +18,8 @@ if ($conn->connect_error)
 }
 else
 {
-	$user_error = "username";
-	$pass_error = "password";
+	$user_error = "Username";
+	$pass_error = "Password";
 	$incorrect = " ";
 
 	if (isset($_POST['submit']))
@@ -37,16 +37,6 @@ else
 			$pass_error = " *Enter Password";
 		}
 	}
-	else if ($user == 'root' && $pass == 'root')
-	{
-		$_SESSION['user'] = "root";
-		header("location: saveimage.php");
-	}
-	else if ($user == 'manager' && $pass == 'manager')
-	{
-		$_SESSION['user'] = "manager";
-		header("location: admin-home.php");
-	}
 	else
 	{
 		$query = "select password from users where username = '$user' AND password = '$pass'";
@@ -59,8 +49,8 @@ else
 		}
 		else
 		{
-			$user_error = "*enter correct username";
-			$pass_error = "*enter correct password";
+			$user_error = "Please enter valid username";
+			$pass_error = "Please enter valid password";
 		}
 	}
 	}
@@ -71,21 +61,26 @@ else
 <html>
 	<head>
 	  <title>Login</title>
+	  <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+	  <link rel="stylesheet" href="css/font-awesome.min.css">
+	  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	  <link rel="stylesheet" href="css/login-reg.css">
 	</head>
 <body>
-  <p><a href="register.php">Register</a> | <a href="login.php">Login</a></p>
-  <h3>Login Form</h3>
-  <form action="" method ="post">
-		<label class="login">
-		
-				<input type="text" placeholder="<?php echo $user_error ?>" name="user"><br>
-				<input type="password" placeholder="<?php echo $pass_error ?>" name="pass"><br>
-				<input type="submit" class = "myButton" name = "submit">
-				<a href = "register.php" class = "myButton">Register</a>
-		
-		</label>
-		</form>
-  
-
+	<div class="wrapper">
+  <input type="checkbox" name="flipper__checkbox" id="flipper__checkbox" class="flipper__checkbox" hidden />
+  <div class="form__container">
+    <div class="form__login">
+      <h1 class="form__header">Login</h1>
+      <form id="loginForm" action="" method="post" class="form">
+      	<input type="text" class="form__element" placeholder="<?php echo $user_error ?>" name="user"><br>
+				<input type="password" class="form__element" placeholder="<?php echo $pass_error ?>" name="pass"><br>
+				<input type="submit" class="form__button" class = "myButton" name = "submit">
+        <small>Not a member yet? <label for="" class=""><a href="register.php">Create your account</a></label>.</small>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
