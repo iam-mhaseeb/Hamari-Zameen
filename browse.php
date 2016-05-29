@@ -32,6 +32,7 @@ if (!isset($_SESSION['user']))
 		background:#F4FDF8;
 		font-size:15px;
 	}
+
 	</style>
 		<title>AutoHire</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -75,18 +76,7 @@ if (!isset($_SESSION['user']))
 
 	<!-- Main -->	
 	<table class="cartable">
-	<caption>Our Cars</caption>
-	<thead>
-	<tr>
-		
-		<th><strong>Image</strong></th>
-		<th><strong>Seating</strong></th>
-		<th><strong>Egnine</strong></th>
-		<th><strong>Name</strong></th>
-		<th><strong>Category</strong></th>
-		
-	</tr>
-	</thead>
+	<caption>Browse</caption>
 	<tbody>
 	<?php
 $con = mysqli_connect('localhost','root','','db_project');
@@ -98,28 +88,21 @@ $sql="SELECT purpose, type, city, title, price, size, unit,img, property_status 
 $result = mysqli_query($con,$sql);
 while($row = mysqli_fetch_array($result)){
 	?>
-		<tr>
-			<th>&nbsp;
-			<?php
-			echo '<img src="data:image/jpeg;base64,' . base64_encode( $row['img'] ) . '" height="300" width="300" />';
+	<h1>Browse</h1>
+<p>
+<?php
+			echo '<img class="float-left" src="data:image/jpeg;base64,' . base64_encode( $row['img'] ) . '" height="300" width="300" />';
 			?>
-			</th>
-			
-			<td><font size = "6" color = "black">&nbsp;
-			<?php echo $row['purpose']; ?> Persons  </font>
-			</td>
-			<td><font size = "6" color = "black">&nbsp;
-			<?php echo $row['type']; ?> </font>
-			</td>
-			<td><font size = "6" color = "black">&nbsp;
-			<?php echo $row['city']; ?> </font>
-			</td>
-			<td><font size = "6" color = "black">&nbsp;
-			<?php echo $row['title']; ?> </font>
-			</td>
-			
-			
-		</tr>
+
+			<?php echo $row['purpose']; ?> <br>
+			<?php echo $row['type']; ?><br>
+			<?php echo $row['city']; ?><br>
+			<?php echo $row['title']; ?><br>
+			<?php echo $row['price']; ?> <br>
+			<?php echo $row['size']; ?> <br>
+			<?php echo $row['unit']; ?> <br>
+			<?php echo $row['property_status']; ?> <br>
+</p>
 	<?php } ?>	
 <?php	
 mysqli_close($con);
