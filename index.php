@@ -5,102 +5,263 @@ if (!isset($_SESSION['user']))
 		header("location: login.php");
 	}
 ?>
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Hamari Zameen</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<link rel="stylesheet" href="css/skel-noscript.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/style-desktop.css" />
-	</head>
-	<body class="homepage">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Hamari Zameen | Project</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
-	<!-- Header -->
-		<div id="header">
-			<div id="nav-wrapper"> 
-				<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="active"><a href="home.php">Home</a></li>
-						<li><a href="car.php">Browse</a></li>
-						<li><a href="rent.php">Rent</a></li>
-						<li><a href="taxi.php">Add Property</a></li>
-						<li><a href="about.php">Search</a></li>
-						<li><a href = "logout.php"><?php echo $_SESSION['user']. " : " ?>Logout</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="container"> 
-				
-				<!-- Logo -->
-				<div id="logo">
-					<h1><a href="#">Hamari Zameen</a></h1>
-				</div>
-			</div>
-		</div>
+<body data-spy="scroll" data-target="#navbar" data-offset="0">
+    <header id="header" role="banner">
+        <div class="container">
+            <div id="navbar" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#main-slider"><i class="icon-home"></i></a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Browse</a></li>
+                        <li><a href="admin.php">Admin</a></li>
+                        <li><a href="#about-us">Settings</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#settings"><?php echo $_SESSION['user']; ?></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header><!--/#header-->
 
-	<!-- Featured -->
-		<div id="featured">
-			<div class="container">
-				<header>
-					<h2>Welcome to Hamari Zameen</h2>
-				</header>
-				<center>
-				<image src = "images\dash3.png" height = "400" width = "1000">
-				<br><br>
-				<strong>Welcome To the best rental car service, we here provide you the best cars to reach your destinations with comfort and elegancy.<br> We believe in making the best of your time by providing every service necessary.
+    <section id="main-slider" class="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Hamari Zameen</h1>
+                        <p class="lead">A database project for Prof. Awais Lodhi</p>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-content">
+                        <h1>Buy and Rent Property</h1>
+                        <p class="lead">Once you login, you can add and rent property.</p>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+        <a class="prev" href="#main-slider" data-slide="prev"><i class="icon-angle-left"></i></a>
+        <a class="next" href="#main-slider" data-slide="next"><i class="icon-angle-right"></i></a>
+    </section><!--/#main-slider-->
 
-				<br><br>
-				You can choose any transportation that suits your needs and is viable to you with services that include picking up, dropping off, renting cars, taxi services etc with the best of costs in your reach. Follow us and ride your life with us.
-				</strong>
-				<br><br>
-				<center>
-				<hr />
-				<font size = "8"> <center>  “ Let’s ride this city together ” </center> </font>
-					
-					</section>				
-				</div>
+    <section id="services">
+        <div class="container">
+            <div class="box first">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-apple icon-md icon-color1"></i>
+                            <h4>iOS development</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-android icon-md icon-color2"></i>
+                            <h4>Android development</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-windows icon-md icon-color3"></i>
+                            <h4>Windows Phone development</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-html5 icon-md icon-color4"></i>
+                            <h4>Ruby on Rails development</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-css3 icon-md icon-color5"></i>
+                            <h4>Javascript development</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="center">
+                            <i class="icon-thumbs-up icon-md icon-color6"></i>
+                            <h4>Responsive web design</h4>
+                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div><!--/.row-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#services-->
 
-				
-			
-			</div>
-		</div>
+    <section id="about-us">
+        <div class="container">
+            <div class="box">
+                <div class="center">
+                    <h2>Meet the Team</h2>
+                    <p class="lead">Project created by </p>
+                </div>
+                <div class="carousel scale">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team1.jpg" alt="" ></p>
+                                        <h3>Agnes Smith<small class="designation">CEO &amp; Founder</small></h3>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team2.jpg" alt="" ></p>
+                                        <h3>Hassan Yousuf</h3>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-3">
+                                    <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team2.jpg" alt="" ></p>
+                                        <h3>M. Haseeb</h3>
+                                    </div>
+                                </div>        
+                                <div class="col-sm-3">
+                                    <div class="member">
+                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team3.jpg" alt="" ></p>
+                                        <h3>Samiah Zakir</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.carousel-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#about-us-->
 
-	<!-- Tweet -->
-		<div id="tweet">
-			<div class="container">
-				<section>
-					<blockquote>&ldquo;You're better off driving our way."</blockquote>
-				</section>
-			</div>
-		</div>
+    <section id="contact">
+        <div class="container">
+            <div class="box last">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Contact Form</h1>
+                        <p>We usually reply within 24 hours</p>
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required="required" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required="required" placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-danger btn-lg">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!--/.col-sm-6-->
+                    <div class="col-sm-6">
+                        <h1>Our Address</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <address>
+                                    <strong>Hamari Zameen, LTD.</strong><br>
+                                    795 Street Malakwal, Apt 98<br>
+                                    Lahore, PAK 54000<br>
+                                    <abbr title="Phone">P:</abbr> (+92) 0331 4481202
+                                </address>
+                            </div>
+                            <div class="col-md-6">
+                                <address>
+                                    <strong>Hamari Zameen, LTD.</strong><br>
+                                    795 Street Malakwal, Apt 98<br>
+                                    Lahore, PAK 54000<br>
+                                    <abbr title="Phone">P:</abbr> (+92) 0331 4481202
+                                </address>
+                            </div>
+                        </div>
+                        <h1>Connect with us</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="social">
+                                    <li><a href="#"><i class="icon-facebook icon-social"></i> Facebook</a></li>
+                                    <li><a href="#"><i class="icon-google-plus icon-social"></i> Google Plus</a></li>
+                                    <li><a href="#"><i class="icon-pinterest icon-social"></i> Pinterest</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="social">
+                                    <li><a href="#"><i class="icon-linkedin icon-social"></i> Linkedin</a></li>
+                                    <li><a href="#"><i class="icon-twitter icon-social"></i> Twitter</a></li>
+                                    <li><a href="#"><i class="icon-youtube icon-social"></i> Youtube</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--/.col-sm-6-->
+                </div><!--/.row-->
+            </div><!--/.box-->
+        </div><!--/.container-->
+    </section><!--/#contact-->
 
-	<!-- Footer -->
-		<div id="footer">
-			<div class="container">
-				<section>
-					<header>
-						<h2>Get in touch</h2>
-						<span class="byline">Follow Us On Social Media</span>
-					</header>
-					<ul class="contact">
-						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-						<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-						<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-						<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
-					</ul>
-				</section>
-			</div>
-		</div>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <img class="pull-right" src="images/shapebootstrap.png" alt="ShapeBootstrap" title="ShapeBootstrap">
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
 
-	
-	</body>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>

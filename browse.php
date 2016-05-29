@@ -118,7 +118,7 @@ $result = mysqli_query($con,$sql);
                             <h5><?php echo $row['title']; ?></h5>
                         </div>
                     </li><!--/.portfolio-item-->
-                    
+
 <?php } ?>	
 <?php	
 mysqli_close($con);
@@ -127,7 +127,7 @@ mysqli_close($con);
             </div><!--/.box-->
         </div><!--/.container-->
     </section><!--/#portfolio-->    
-
+    
     <footer id="footer">
         <div class="container">
             <div class="row">
