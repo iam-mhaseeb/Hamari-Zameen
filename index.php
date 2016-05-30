@@ -35,15 +35,15 @@ if (!isset($_SESSION['user']))
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"></a>
+                    <a class="navbar-brand" href="index.php"></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#main-slider"><i class="icon-home"></i></a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Browse</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="browse.php">Browse</a></li>
                         <li><a href="admin.php">Admin</a></li>
-                        <li><a href="#about-us">Settings</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#settings"><?php echo $_SESSION['user']; ?></a></li>
                     </ul>
@@ -126,7 +126,7 @@ if (!isset($_SESSION['user']))
         </div><!--/.container-->
     </section><!--/#services-->
 
-    <section id="about-us">
+    <section id="team">
         <div class="container">
             <div class="box">
                 <div class="center">
@@ -137,37 +137,14 @@ if (!isset($_SESSION['user']))
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team1.jpg" alt="" ></p>
-                                        <h3>Agnes Smith<small class="designation">CEO &amp; Founder</small></h3>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team2.jpg" alt="" ></p>
-                                        <h3>Hassan Yousuf</h3>
-                                    </div>
-                                </div> 
-                                <div class="col-sm-3">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team2.jpg" alt="" ></p>
-                                        <h3>M. Haseeb</h3>
-                                    </div>
-                                </div>        
-                                <div class="col-sm-3">
-                                    <div class="member">
-                                        <p><img class="img-responsive img-thumbnail img-circle" src="images/team3.jpg" alt="" ></p>
-                                        <h3>Samiah Zakir</h3>
-                                    </div>
-                                </div>
+                                <h3 style="text-align:center;">Hassan Yousuf, Muhammad Haseeb, Samiyah Zakir</h2>
                             </div>
                         </div>
                     </div>
                 </div><!--/.carousel-->
             </div><!--/.box-->
         </div><!--/.container-->
-    </section><!--/#about-us-->
+    </section><!--/#team-->
 
     <section id="contact">
         <div class="container">
@@ -249,10 +226,7 @@ if (!isset($_SESSION['user']))
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
-                </div>
-                <div class="col-sm-6">
-                    <img class="pull-right" src="images/shapebootstrap.png" alt="ShapeBootstrap" title="ShapeBootstrap">
+                    &copy; 2016 <a target="_blank" href="http://behance.net/hassanyf" title="">Hamari Zameen</a>. All Rights Reserved.
                 </div>
             </div>
         </div>

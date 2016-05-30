@@ -1,10 +1,9 @@
 <?php
 session_start();
 if (!isset($_SESSION['user']))
-	{
-		header("location: login.php");
-	}
-
+    {
+        header("location: login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +57,7 @@ if (!isset($_SESSION['user']))
             <div class="item active">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1>Browse</h1>
+                        <h1>Rent Property</h1>
                     </div>
                 </div>
             </div><!--/.item-->
@@ -75,49 +74,42 @@ if (!isset($_SESSION['user']))
         <a class="next" href="#main-slider" data-slide="next"><i class="icon-angle-right"></i></a>
     </section><!--/#main-slider-->
 
-    <?php
+    <section id="portfolio">
+        <div class="container">
+            <div class="box">
+                   <form action = "rent-transaction.php" method = "POST">
+<br><br><br>
+<center>
+   <font size = "5" color = "black"> Select Property : </font> <select value = "select car" name = "p_name">
+<?php
 $con = mysqli_connect('localhost','root','','db_project');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 mysqli_select_db($con, "db_project");
-$sql="SELECT purpose, type, city, title, price, size, unit,img, property_status FROM property";
+
+$sql="select title from property where property_status='available'";
 $result = mysqli_query($con,$sql);
 
-	?>
-
-    <section id="portfolio">
-        <div class="container">
-            <div class="box">
-                <ul class="portfolio-items col-4">
-                	<?php while($row = mysqli_fetch_array($result)){ ?>
-                    <li class="portfolio-item apps">
-                        <div class="item-inner">
-                            <div class="portfolio-image">
-                                <?php	echo '<img class="float-left" width="370px" height="250px" src="data:image/jpeg;base64,' . base64_encode( $row['img'] ) . '" height="370" width="250px" />'; ?>
-                                <div class="overlay">
-                                    <a class="preview btn btn-danger" title="
-                                        <h3 ><?php echo $title = $row['title']; ?> (<?php echo $row['property_status']; ?>)</h3>
-                                        
-
-                                        <br>
-                                        <h4>Property Purpose: <?php echo $row['purpose']; ?> <br>
-    									Property Type: <?php echo $row['type']; ?><br>
-    									City: <?php echo $row['city']; ?><br>
-    									Price: Rs. <?php echo $row['price']; ?> PKR<br>
-    									Size: <?php echo $row['size']; ?> <?php echo $row['unit']; ?></h4> <br>
-    									" href="images/portfolio/full/item1.jpg"><i class="icon-eye-open"></i></a>           
-                                </div>
-                            </div>
-                            <h5><?php echo $row['title']; ?></h5>
-                        </div>
-                    </li><!--/.portfolio-item-->
-
-<?php } ?>	
-<?php	
+while($row = mysqli_fetch_array($result)){
+    ?>
+        <option> <?php echo $row['title']; ?>  </option>
+ <?php } ?>
+ <?php  
 mysqli_close($con);
+
 ?>
-                </ul>   
+ 
+ 
+ </select>
+    </center>
+    <br><br>
+    <center><font size = "5" color = "black"> Start Day : </font><input type="text" class="rent-input" placeholder="Enter Start Day" name = "start_days"></center>
+    <br><br>
+    <center><font size = "5" color = "black"> End Day : </font><input type="text" class="rent-input" placeholder="Enter End Day" name = "end_days"></center>
+    <br><br>
+    <center><input type = "submit" value = "Book & Rent Property" class ="btn"></center>
+    </form>
             </div><!--/.box-->
         </div><!--/.container-->
     </section><!--/#portfolio-->    
